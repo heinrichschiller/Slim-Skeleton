@@ -1,0 +1,7 @@
+.vscode/
+
+composer.lock
+
+/var/caches/phpunit/*
+!/var/caches/phpunit/README.md
+/vendor/
