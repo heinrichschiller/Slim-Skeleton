@@ -1,6 +1,9 @@
 # Slim-Skeleton
 
 [![Build Status](https://travis-ci.com/heinrichschiller/Slim-Skeleton.svg?branch=main)](https://travis-ci.com/github/heinrichschiller/Slim-Skeleton)
+[![Latest Stable Version](https://poser.pugx.org/heinrichschiller/slim-skeleton/v)](//packagist.org/packages/heinrichschiller/slim-skeleton) 
+[![Latest Unstable Version](https://poser.pugx.org/heinrichschiller/slim-skeleton/v/unstable)](//packagist.org/packages/heinrichschiller/slim-skeleton) 
+[![License](https://poser.pugx.org/heinrichschiller/slim-skeleton/license)](//packagist.org/packages/heinrichschiller/slim-skeleton)
 
 My own (non official) simple slim skeleton app, for websites, apis and webapps. It is not better than the official Slim-Skeleton, it is more a composer package and has my own configuration for my work with Slim. If you don't know what to take, take the original :)
 
