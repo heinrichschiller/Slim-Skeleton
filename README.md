@@ -25,3 +25,33 @@ https://github.com/slimphp/Slim-Skeleton
 ## Install
 composer create-project heinrichschiller/slim-skeleton [my-app-name] --prefer-dist
 
+## Usage
+
+After installing the skeleton-app, please go to bootstrap/app.php and include one or both routes that is needed.
+
+```php
+
+// bootstrap.app.php
+
+...
+
+/*
+|----------------------------------------------------------------------------
+| Set up routes with nikic/fast-route
+|----------------------------------------------------------------------------
+|
+| For more informations see: 
+| https://www.slimframework.com/docs/v4/objects/routing.html
+|
+| Include the routes that you need. You can use web-routes for classic php
+| applications or api-routes for REST-API applications. And of course you 
+| can use both.
+|
+*/
+
+// (require ROOT_DIR . 'routes/api.php')($app);
+
+// (require ROOT_DIR . 'routes/web.php')($app);
+
+
+```
