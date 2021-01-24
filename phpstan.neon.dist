@@ -1,7 +1,7 @@
 parameters:
     bootstrapFiles:
         - app/constants.php
-        - bootstrap/bootstrap.php
+        - bootstrap/app.php
     level: 0
     paths:
         - app
