@@ -27,4 +27,4 @@
 
 declare(strict_types=1);
 
-(require __DIR__ . '/../bootstrap/bootstrap.php')->run();
+(require __DIR__ . '/../bootstrap/app.php')->run();
