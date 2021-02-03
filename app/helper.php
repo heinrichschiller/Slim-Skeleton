@@ -29,7 +29,6 @@
  * Gets the value of an environment variable. Supports boolean, empty and null.
  *
  * @param  string  $key
- * @param  mixed   $default
  * @return mixed
  */
 function env($key)
