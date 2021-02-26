@@ -35,7 +35,7 @@
         }
     },
     "scripts": {
-        "start": "php -S localhost:8080 -t public",
+        "serve": "php -S localhost:8080 -t public",
         "phpstan": "phpstan analyse",
         "phpunit": "phpunit"
     }
