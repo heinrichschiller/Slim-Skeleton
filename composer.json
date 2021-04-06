@@ -16,7 +16,7 @@
         "slim/slim": "4.*",
         "slim/psr7": "1.*",
         "php-di/php-di": "6.*",
-        "vlucas/phpdotenv": "5.2.*",
+        "vlucas/phpdotenv": "5.3.*",
         "monolog/monolog": "2.2.*"
     },
     "require-dev": {
