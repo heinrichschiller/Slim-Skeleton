@@ -31,6 +31,8 @@ use DI\ContainerBuilder;
 use Slim\App;
 
 require __DIR__ . '/../app/constants.php';
+require __DIR__ . '/../app/helper.php';
+
 require ROOT_DIR . 'vendor/autoload.php';
 
 /*
