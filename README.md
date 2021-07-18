@@ -55,3 +55,18 @@ After installing the skeleton-app, please go to bootstrap/app.php and include on
 
 
 ```
+
+## Requirements
+* PHP 7.3+ or 8.0+
+* Apache with mod_rewrite
+
+## Features
+This Skeleton is based on:
+* https://github.com/slimphp/Slim-Skeleton
+* https://odan.github.io/2019/11/05/slim4-tutorial.html
+* Autoloading with Composer
+* Monolog
+* PHP-DI
+* PhpUnit
+* PhpStan
+* Symfony/var-dumper
