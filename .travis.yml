@@ -1,11 +1,11 @@
+os: linux
+dist: bionic
+
 language: php
-
 php:
-  - "7.3"
-  - "7.4"
-  - "8.0"
-
-dist: trusty
+  - 7.3
+  - 7.4
+  - 8.0
 
 install:
   - composer install -n
