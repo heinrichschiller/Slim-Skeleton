@@ -41,9 +41,9 @@ return [
     |
     */
     'error' => [
-        'displayErrorDetails' => env('DISPLAY_ERROR_DETAILS'),
-        'logErrors' => env('LOG_ERRORS'),
-        'logErrorDetails' => env('LOG_ERROR_DETAILS')
+        'displayErrorDetails' => $_ENV['DISPLAY_ERROR_DETAILS'],
+        'logErrors' => $_ENV['LOG_ERRORS'],
+        'logErrorDetails' => $_ENV['LOG_ERROR_DETAILS']
     ],
 
     /*
@@ -56,10 +56,10 @@ return [
     |
     */
     'logger' => [
-        'name' => env('APP_NAME'),
-        'path' => ROOT_DIR . env('LOGGER_PATH'),
-        'filename' => env('LOGGER_FILENAME'),
+        'name' => $_ENV['APP_NAME'],
+        'path' => ROOT_DIR . $_ENV['LOGGER_PATH'],
+        'filename' => $_ENV['LOGGER_FILENAME'],
         'level' => Logger::DEBUG,
-        'filePermission' => env('LOGGER_FILE_PERMISSIONS')
+        'filePermission' => $_ENV['LOGGER_FILE_PERMISSIONS']
     ]
 ];
