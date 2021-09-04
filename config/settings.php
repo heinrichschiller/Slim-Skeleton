@@ -36,7 +36,7 @@ return [
     | Settings for ErrorMiddleware
     |----------------------------------------------------------------------------
     |
-    | For more information, see: 
+    | For more information, see:
     | https://www.slimframework.com/docs/v4/middleware/error-handling.html
     |
     */
@@ -51,7 +51,7 @@ return [
     | Settings for Monolog Logger
     |----------------------------------------------------------------------------
     |
-    | For more information, see: 
+    | For more information, see:
     | https://github.com/Seldaek/monolog
     |
     */
