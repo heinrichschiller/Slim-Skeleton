@@ -32,9 +32,12 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\Processor\UidProcessor;
 use Psr\Container\ContainerInterface;
+use Psr\Log\LoggerInterface;
 use Slim\App;
 use Slim\Factory\AppFactory;
-use Psr\Log\LoggerInterface;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\INput\InputOption;
+
 use Slim\Middleware\ErrorMiddleware;
 
 return function(ContainerBuilder $builder)
@@ -52,6 +55,17 @@ return function(ContainerBuilder $builder)
             return AppFactory::create();
         },
 
+        Application::class => function(ContainerInterface $container): Application
+        {
+            $application = new Application;
+
+            foreach($container->get('settings')['commands'] as $class) {
+                $application->add($container->get($class));
+            }
+
+            return $application;
+        },
+        
         ErrorMiddleware::class => function(ContainerInterface $container): ErrorMiddleware
         {
             $app = $container->get(App::class);
