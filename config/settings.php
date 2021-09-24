@@ -33,6 +33,19 @@ return [
 
     /*
     |----------------------------------------------------------------------------
+    | Settings for symfony console commands
+    |----------------------------------------------------------------------------
+    |
+    | For more information, see:
+    | https://symfony.com/doc/current/console.html#the-console-app-env-app-debug
+    |
+    */
+    'commands' => [
+        // add commands here
+    ],
+
+    /*
+    |----------------------------------------------------------------------------
     | Settings for ErrorMiddleware
     |----------------------------------------------------------------------------
     |
