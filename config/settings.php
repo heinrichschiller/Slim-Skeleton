@@ -36,14 +36,14 @@ return [
     | Settings for ErrorMiddleware
     |----------------------------------------------------------------------------
     |
-    | For more information, see: 
+    | For more information, see:
     | https://www.slimframework.com/docs/v4/middleware/error-handling.html
     |
     */
     'error' => [
-        'displayErrorDetails' => env('DISPLAY_ERROR_DETAILS'),
-        'logErrors' => env('LOG_ERRORS'),
-        'logErrorDetails' => env('LOG_ERROR_DETAILS')
+        'displayErrorDetails' => $_ENV['DISPLAY_ERROR_DETAILS'],
+        'logErrors' => $_ENV['LOG_ERRORS'],
+        'logErrorDetails' => $_ENV['LOG_ERROR_DETAILS']
     ],
 
     /*
@@ -51,15 +51,15 @@ return [
     | Settings for Monolog Logger
     |----------------------------------------------------------------------------
     |
-    | For more information, see: 
+    | For more information, see:
     | https://github.com/Seldaek/monolog
     |
     */
     'logger' => [
-        'name' => env('APP_NAME'),
-        'path' => ROOT_DIR . env('LOGGER_PATH'),
-        'filename' => env('LOGGER_FILENAME'),
+        'name' => $_ENV['APP_NAME'],
+        'path' => ROOT_DIR . $_ENV['LOGGER_PATH'],
+        'filename' => $_ENV['LOGGER_FILENAME'],
         'level' => Logger::DEBUG,
-        'filePermission' => env('LOGGER_FILE_PERMISSIONS')
+        'filePermission' => $_ENV['LOGGER_FILE_PERMISSIONS']
     ]
 ];

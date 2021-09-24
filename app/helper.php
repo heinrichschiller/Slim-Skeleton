@@ -25,41 +25,4 @@
  *
  */
 
-/**
- * Gets the value of an environment variable. Supports boolean, empty and null.
- *
- * @param  string  $key
- * @return mixed
- */
-function env($key)
-{
-    $value = $_ENV[$key];
-
-    if (false === $value) {
-        return false;
-    }
-
-    switch (strtolower($value)) {
-        case 'true':
-        case '(true)':
-            return true;
-
-        case 'false':
-        case '(false)':
-            return false;
-
-        case 'empty':
-        case '(empty)':
-            return '';
-
-        case 'null':
-        case '(null)':
-            return;
-    }
-
-    if (preg_match('/\A([\'"])(.*)\1\z/', $value, $matches)) {
-        return $matches[2];
-    }
-
-    return $value;
-}
+// nothing here ...

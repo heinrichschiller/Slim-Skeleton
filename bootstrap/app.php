@@ -37,6 +37,24 @@ require ROOT_DIR . 'vendor/autoload.php';
 
 /*
 |----------------------------------------------------------------------------
+| Php version validation
+|----------------------------------------------------------------------------
+*/
+if( !defined('PHP_VERSION_ID') || 70300 > PHP_VERSION_ID ) {
+    if( 'cli' == PHP_SAPI ) {
+        echo 'This Slim-Skeleton support PHP 7.3 or later.';
+    } else {
+        echo <<<HTML
+            <div>
+                <p>This Slim-Skeleton supports PHP 7.3 or later.</p>
+            </div>
+        HTML;
+        exit(1);
+    }
+}
+
+/*
+|----------------------------------------------------------------------------
 | Loads environment variables from .env
 |----------------------------------------------------------------------------
 |
