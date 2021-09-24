@@ -51,7 +51,7 @@ return function(App $app)
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Slim4-Skeleton</title>
+                <title>heinrichs Slim4-Skeleton</title>
 
                 <link 
                     href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" 
@@ -110,18 +110,53 @@ return function(App $app)
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title">Official Project</h5>
-                                        <div class="card-text">https://www.slimframework.com/</div>
-                                        <div class="card-text">https://www.slimframework.com/docs/v4/</div>
-                                        <div class="card-text">https://discourse.slimframework.com/</div>
+                                        <div class="card-text">
+                                            <ul>
+                                                <li>
+                                                    <strong>Homepage: </strong>
+                                                    <a href="https://www.slimframework.com" target="_blank" rel="noopener">slimframework.com</a>
+                                                </li>
+                                                <li>
+                                                    <strong>Documentation: </strong>
+                                                    <a href="https://www.slimframework.com/docs/v4/" target="_blank" rel="noopener">slimframework.com/docs</a>
+                                                </li>
+                                                <li>
+                                                    <strong>Forum: </strong>
+                                                    <a href="https://discourse.slimframework.com/" target="_blank" rel="noopener">discourse.slimframework.com</a>
+                                                </li>
+                                                <li>
+                                                    <strong>Skeleton: </strong>
+                                                    <a href="https://github.com/slimphp/Slim-Skeleton" target="_blank" rel="noopener">Slim-Skeleton</a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Read more</h5>
-                                        <div class="card-text">https://github.com/heinrichschiller/Slim-Skeleton</div>
-                                        <div class="card-text">https://odan.github.io</div>
+                                        <h5 class="card-title">Features</h5>
+                                        <div class="card-text">
+                                            <ul>
+                                                <li>
+                                                    <strong>PHP-DI: </strong>
+                                                    <a href="https://php-di.org/" target="_blank" rel="noopener">php-di.org</a>
+                                                </li>
+                                                <li>
+                                                    <strong>PHP dotenv: </strong>
+                                                    <a href="https://github.com/vlucas/phpdotenv" target="_blank" rel="noopener">vlucas/phpdotenv</a>
+                                                </li>
+                                                <li>
+                                                    <strong>Monolog: </strong>
+                                                    <a href="https://github.com/Seldaek/monolog" target="_blank" rel="noopener">monolog/monolog</a>
+                                                </li>
+                                                <li>
+                                                    <strong>Symfony Console: </strong>
+                                                    <a href="https://symfony.com/doc/current/components/console.html" target="_blank" rel="noopener">symfony/console</a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
