@@ -44,7 +44,101 @@ return function(App $app)
 {
     $app->get('/', function(Request $request, Response $response, array $args = []): Response
     {
-        $response->getBody()->write('Welcome to Slim PHP micro framework!');
+        $html = <<<HTML
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Slim4-Skeleton</title>
+
+                <link 
+                    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" 
+                    rel="stylesheet" 
+                    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" 
+                    crossorigin="anonymous"
+                >
+
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+                <style>
+                    body {
+                        background-color: #282a36;
+                    }
+
+                    section {
+                        margin-top: 3rem;
+                    }
+
+                    .card {
+                        background-color: #1c2035;
+                        color: #aaa;
+                    }
+
+                    .site-title {
+                        text-align: center; 
+                        margin-top: 10rem;
+                        font-family: 'Roboto', sans-serif;
+                        font-size: 72px;
+                        color: #719E40;
+                    }
+
+                    .site-slogan {
+                        color: #aaa;
+                        text-align: center;
+                        font-size: 24px;
+                    }
+                </style>
+            </head>
+            <body>
+                <header>
+                    <div class="site-title">
+                        heinrichs Slim4-Skeleton
+                    </div>
+                    <div class="site-slogan">
+                        Welcome to Slim PHP micro framework!
+                    </div>
+                </header>
+
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Official Project</h5>
+                                        <div class="card-text">https://www.slimframework.com/</div>
+                                        <div class="card-text">https://www.slimframework.com/docs/v4/</div>
+                                        <div class="card-text">https://discourse.slimframework.com/</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Read more</h5>
+                                        <div class="card-text">https://github.com/heinrichschiller/Slim-Skeleton</div>
+                                        <div class="card-text">https://odan.github.io</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <script 
+                    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" 
+                    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" 
+                    crossorigin="anonymous"
+                ></script>
+            </body>
+            </html>
+        HTML;
+
+        $response->getBody()->write($html);
 
         return $response;
     });
