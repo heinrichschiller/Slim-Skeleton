@@ -13,7 +13,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^7.4 || ^8.0",
-        "slim/slim": "^4.8",
+        "slim/slim": "^4.9",
         "slim/psr7": "^1.4",
         "php-di/php-di": "^6.3",
         "vlucas/phpdotenv": "^5.3",
