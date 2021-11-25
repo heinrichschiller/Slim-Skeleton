@@ -41,17 +41,17 @@ After installing the skeleton-app, please go to bootstrap/app.php and include on
 ...
 
 /*
-|----------------------------------------------------------------------------
-| Set up routes with nikic/fast-route
-|----------------------------------------------------------------------------
-|
-| For more informations see:
-| https://www.slimframework.com/docs/v4/objects/routing.html
-|
-| Include the routes that you need. You can use web-routes for classic php
-| applications or api-routes for REST-API applications. And of course you
-| can use both.
-|
+*----------------------------------------------------------------------------
+* Set up routes with nikic/fast-route
+*----------------------------------------------------------------------------
+*
+* For more informations see:
+* https://www.slimframework.com/docs/v4/objects/routing.html
+*
+* Include the routes that you need. You can use web-routes for classic php
+* applications or api-routes for REST-API applications. And of course you
+* can use both.
+*
 */
 
 // (require ROOT_DIR . 'routes/api.php')($app);
@@ -63,15 +63,16 @@ After installing the skeleton-app, please go to bootstrap/app.php and include on
 
 ## Requirements
 
-- PHP 7.3+ or 8.0+
+- PHP 7.4+ or 8.0+
 - Apache with mod_rewrite
 
-## Features
-
-This Skeleton is based on:
+## This Skeleton is based on:
 
 - https://github.com/slimphp/Slim-Skeleton
 - https://odan.github.io/2019/11/05/slim4-tutorial.html
+
+## Features
+
 - Autoloading with Composer
 - Monolog
 - PHP-DI
@@ -81,3 +82,4 @@ This Skeleton is based on:
 - phpunit/phpunit
 - phpstan/phpstan
 - symfony/var-dumper
+- squizlabs/php_codesniffer
