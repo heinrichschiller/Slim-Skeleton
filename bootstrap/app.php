@@ -36,9 +36,9 @@ require __DIR__ . '/../app/helper.php';
 require ROOT_DIR . 'vendor/autoload.php';
 
 /*
-|----------------------------------------------------------------------------
-| Php version validation
-|----------------------------------------------------------------------------
+*----------------------------------------------------------------------------
+* Php version validation
+*----------------------------------------------------------------------------
 */
 if( !defined('PHP_VERSION_ID') || 70300 > PHP_VERSION_ID ) {
     if( 'cli' == PHP_SAPI ) {
@@ -54,26 +54,26 @@ if( !defined('PHP_VERSION_ID') || 70300 > PHP_VERSION_ID ) {
 }
 
 /*
-|----------------------------------------------------------------------------
-| Loads environment variables from .env
-|----------------------------------------------------------------------------
-|
-| You should never store sensitive credentials in your code.
-| https://github.com/vlucas/phpdotenv
-|
+*----------------------------------------------------------------------------
+* Loads environment variables from .env
+*----------------------------------------------------------------------------
+*
+* You should never store sensitive credentials in your code.
+* https://github.com/vlucas/phpdotenv
+*
 */
 
 $dotenv = Dotenv\Dotenv::createMutable( ROOT_DIR );
 $dotenv->load();
 
 /*
-|----------------------------------------------------------------------------
-| Instantiate PHP-DI ContainerBuilder
-|----------------------------------------------------------------------------
-|
-| The dependency injection container for humans, see:
-| https://php-di.org/
-|
+*----------------------------------------------------------------------------
+* Instantiate PHP-DI ContainerBuilder
+*----------------------------------------------------------------------------
+*
+* The dependency injection container for humans, see:
+* https://php-di.org/
+*
 */
 
 $builder = new ContainerBuilder;
@@ -89,17 +89,17 @@ $app = $container->get(App::class);
 (require ROOT_DIR . 'app/middleware.php')($app);
 
 /*
-|----------------------------------------------------------------------------
-| Set up routes with nikic/fast-route
-|----------------------------------------------------------------------------
-|
-| For more informations see: 
-| https://www.slimframework.com/docs/v4/objects/routing.html
-|
-| Include the routes that you need. You can use web-routes for classic php
-| applications or api-routes for REST-API applications. And of course you 
-| can use both.
-|
+*----------------------------------------------------------------------------
+* Set up routes with nikic/fast-route
+*----------------------------------------------------------------------------
+*
+* For more informations see: 
+* https://www.slimframework.com/docs/v4/objects/routing.html
+*
+* Include the routes that you need. You can use web-routes for classic php
+* applications or api-routes for REST-API applications. And of course you 
+* can use both.
+*
 */
 
 // (require ROOT_DIR . 'routes/api.php')($app);

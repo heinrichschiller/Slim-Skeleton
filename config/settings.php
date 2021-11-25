@@ -32,26 +32,26 @@ use Monolog\Logger;
 return [
 
     /*
-    |----------------------------------------------------------------------------
-    | Settings for symfony console commands
-    |----------------------------------------------------------------------------
-    |
-    | For more information, see:
-    | https://symfony.com/doc/current/console.html#the-console-app-env-app-debug
-    |
+    *----------------------------------------------------------------------------
+    * Settings for symfony console commands
+    *----------------------------------------------------------------------------
+    *
+    * For more information, see:
+    * https://symfony.com/doc/current/console.html#the-console-app-env-app-debug
+    *
     */
     'commands' => [
         // add commands here
     ],
 
     /*
-    |----------------------------------------------------------------------------
-    | Settings for ErrorMiddleware
-    |----------------------------------------------------------------------------
-    |
-    | For more information, see:
-    | https://www.slimframework.com/docs/v4/middleware/error-handling.html
-    |
+    *----------------------------------------------------------------------------
+    * Settings for ErrorMiddleware
+    *----------------------------------------------------------------------------
+    *
+    * For more information, see:
+    * https://www.slimframework.com/docs/v4/middleware/error-handling.html
+    *
     */
     'error' => [
         'displayErrorDetails' => $_ENV['DISPLAY_ERROR_DETAILS'],
@@ -60,13 +60,13 @@ return [
     ],
 
     /*
-    |----------------------------------------------------------------------------
-    | Settings for Monolog Logger
-    |----------------------------------------------------------------------------
-    |
-    | For more information, see:
-    | https://github.com/Seldaek/monolog
-    |
+    *----------------------------------------------------------------------------
+    * Settings for Monolog Logger
+    *----------------------------------------------------------------------------
+    *
+    * For more information, see:
+    * https://github.com/Seldaek/monolog
+    *
     */
     'logger' => [
         'name' => $_ENV['APP_NAME'],
