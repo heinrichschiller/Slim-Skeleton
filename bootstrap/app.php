@@ -104,6 +104,6 @@ $app = $container->get(App::class);
 
 // (require ROOT_DIR . 'routes/api.php')($app);
 
-// (require ROOT_DIR . 'routes/web.php')($app);
+(require ROOT_DIR . 'routes/web.php')($app);
 
 return $app;
