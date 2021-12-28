@@ -32,14 +32,14 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 
 /*
-|----------------------------------------------------------------------------
-| Set up routes with nikic/fast-route
-|----------------------------------------------------------------------------
-|
-| For more informations see: 
-| https://www.slimframework.com/docs/v4/objects/routing.html
-|
-*/
+ *----------------------------------------------------------------------------
+ * Set up routes with nikic/fast-route
+ *----------------------------------------------------------------------------
+ *
+ * For more informations see: 
+ * https://www.slimframework.com/docs/v4/objects/routing.html
+ *
+ */
 return function(App $app)
 {
     $app->get('/', function(Request $request, Response $response, array $args = []): Response
