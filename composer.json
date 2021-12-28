@@ -12,7 +12,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^8.0",
         "slim/slim": "^4.9",
         "slim/psr7": "^1.5",
         "php-di/php-di": "^6.3",
