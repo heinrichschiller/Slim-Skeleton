@@ -40,13 +40,13 @@ require ROOT_DIR . 'vendor/autoload.php';
  * Php version validation
  *----------------------------------------------------------------------------
  */
-if( !defined('PHP_VERSION_ID') || 70400 > PHP_VERSION_ID ) {
+if( !defined('PHP_VERSION_ID') || 80000 > PHP_VERSION_ID ) {
     if( 'cli' == PHP_SAPI ) {
-        echo 'This Slim-Skeleton support PHP 7.4 or later.';
+        echo 'This Slim-Skeleton support PHP 8.0 or later.';
     } else {
         echo <<<HTML
             <div>
-                <p>This Slim-Skeleton supports PHP 7.4 or later.</p>
+                <p>This Slim-Skeleton supports PHP 8.0 or later.</p>
             </div>
         HTML;
         exit(1);
