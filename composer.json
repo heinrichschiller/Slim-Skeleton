@@ -38,9 +38,15 @@
     },
     "scripts": {
         "serve": "php -S localhost:8080 -t public",
-        "phpstan": "phpstan analyse",
-        "phpunit": "phpunit",
-        "phpcs": "phpcs --standard=phpcs.xml",
-        "phpcbf": "phpcbf --standard=phpcs.xml"
+        "test:phpstan": "phpstan analyse",
+        "test:phpunit": "phpunit --configuration phpunit.xml --colors=always",
+        "test:phpcs": "phpcs --standard=phpcs.xml",
+        "test:phpcbf": "phpcbf --standard=phpcs.xml",
+        "test:all" : [
+            "@test:phpstan",
+            "@test:phpunit",
+            "@test:phpcs",
+            "@test:phpcbf"
+        ]
     }
 }
