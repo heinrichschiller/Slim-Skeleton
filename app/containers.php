@@ -36,7 +36,6 @@ use Psr\Log\LoggerInterface;
 use Slim\App;
 use Slim\Factory\AppFactory;
 use Symfony\Component\Console\Application;
-use Symfony\Component\Console\INput\InputOption;
 
 use Slim\Middleware\ErrorMiddleware;
 
