@@ -33,7 +33,7 @@ return function(ContainerBuilder $builder)
 {
     $builder->addDefinitions([
 
-        // put your own dependencies here
+        // put your own containers here
         
     ]);
 };
