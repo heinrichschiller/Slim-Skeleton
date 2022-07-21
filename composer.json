@@ -42,11 +42,12 @@
         "test:phpunit": "phpunit --configuration phpunit.xml --colors=always",
         "test:phpcs": "phpcs --standard=phpcs.xml",
         "test:phpcbf": "phpcbf --standard=phpcs.xml",
-        "test:all" : [
+        "test:all": [
             "@test:phpstan",
             "@test:phpunit",
             "@test:phpcs",
             "@test:phpcbf"
-        ]
+        ],
+        "test:coverage": "phpdbg -qqr vendor/bin/phpunit --configuration phpunit.xml --colors=always --coverage-html code-coverage"
     }
 }
