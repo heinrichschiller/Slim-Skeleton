@@ -16,7 +16,7 @@
         "slim/slim": "^4.11",
         "slim/psr7": "^1.6",
         "php-di/php-di": "^6.4",
-        "vlucas/phpdotenv": "^5.4",
+        "vlucas/phpdotenv": "^5.5",
         "monolog/monolog": "^2.7",
         "symfony/console": "^6.1"
     },
