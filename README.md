@@ -6,7 +6,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/heinrichschiller/slim-skeleton/v/unstable)](//packagist.org/packages/heinrichschiller/slim-skeleton)
 [![License](https://poser.pugx.org/heinrichschiller/slim-skeleton/license)](//packagist.org/packages/heinrichschiller/slim-skeleton)
 
-My own (non official) simple slim skeleton app, for websites, apis and webapps. It is not better than the official Slim-Skeleton, it is more a composer package and has my own configuration for my work with Slim. If you don't know what to take, take the original :)
+My own simple slim skeleton app, for websites, apis and webapps. It is not better than the official Slim-Skeleton, it is more a composer package and has my own configuration for my work with Slim. If you don't know what to take, take the original :)
 
 See below:
 
@@ -37,14 +37,20 @@ composer create-project heinrichschiller/slim-skeleton [my-app-name] --prefer-di
 
 ## This Skeleton is based on:
 
-- https://github.com/slimphp/Slim-Skeleton
+- https://github.com/odan/slim4-skeleton
 - https://odan.github.io/2019/11/05/slim4-tutorial.html
 
 ## Features
 
-- Autoloading with Composer
-- Monolog
-- PHP-DI
+* [Standard PHP package skeleton](https://github.com/php-pds/skeleton)
+* HTTP router (Slim)
+* HTTP message interfaces (PSR-7)
+* HTTP Server Request Handlers, Middleware (PSR-15)
+* Dependency injection container (PSR-11)
+* Autoloader (PSR-4)
+* Single action controllers
+* Unit- and integration tests
+* Console Commands
 
 ## Developer tools
 
