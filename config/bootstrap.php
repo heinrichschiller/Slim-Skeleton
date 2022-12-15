@@ -28,19 +28,6 @@ if( !defined('PHP_VERSION_ID') || 80100 > PHP_VERSION_ID ) {
 
 /*
  *----------------------------------------------------------------------------
- * Loads environment variables from .env
- *----------------------------------------------------------------------------
- *
- * You should never store sensitive credentials in your code.
- * https://github.com/vlucas/phpdotenv
- *
- */
-
-$dotenv = Dotenv\Dotenv::createMutable( __DIR__ . '/../' );
-$dotenv->load();
-
-/*
- *----------------------------------------------------------------------------
  * Instantiate PHP-DI ContainerBuilder
  *----------------------------------------------------------------------------
  *
