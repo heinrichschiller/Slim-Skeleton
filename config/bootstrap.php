@@ -13,8 +13,8 @@ require_once __DIR__ . '/../vendor/autoload.php';
  *----------------------------------------------------------------------------
  *
  */
-if( !defined('PHP_VERSION_ID') || 80100 > PHP_VERSION_ID ) {
-    if( 'cli' == PHP_SAPI ) {
+if (!defined('PHP_VERSION_ID') || 80100 > PHP_VERSION_ID) {
+    if ('cli' == PHP_SAPI) {
         echo 'This Slim-Skeleton support PHP 8.1 or later.';
     } else {
         echo <<<HTML
@@ -38,7 +38,7 @@ if( !defined('PHP_VERSION_ID') || 80100 > PHP_VERSION_ID ) {
 $containerBuilder = new ContainerBuilder;
 $containerBuilder->addDefinitions(__DIR__ . '/container.php');
 
-$container = $containerBuilder->build(); 
+$container = $containerBuilder->build();
 
 /*
  *----------------------------------------------------------------------------
@@ -53,11 +53,11 @@ $app = $container->get(App::class);
  * Register routes
  *----------------------------------------------------------------------------
  *
- * For more informations see: 
+ * For more informations see:
  * https://www.slimframework.com/docs/v4/objects/routing.html
  *
  * Include the routes that you need. You can use web-routes for classic php
- * applications or api-routes for REST-API applications. And of course you 
+ * applications or api-routes for REST-API applications. And of course you
  * can use both.
  *
  */
@@ -67,8 +67,8 @@ $app = $container->get(App::class);
  *----------------------------------------------------------------------------
  * Register middleware
  *----------------------------------------------------------------------------
- * 
- * For more informations see: 
+ *
+ * For more informations see:
  * https://www.slimframework.com/docs/v4/concepts/middleware.html
  *
  */
