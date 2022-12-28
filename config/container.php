@@ -9,27 +9,23 @@ use Slim\Factory\AppFactory;
 use Slim\Middleware\ErrorMiddleware;
 
 return [
-    'settings' => function () 
-    {
-        return require __DIR__ . 'settings.php'; 
+    'settings' => function () {
+        return require __DIR__ . 'settings.php';
     },
 
-    Config::class => function (ContainerInterface $container): Config
-    {
+    Config::class => function (ContainerInterface $container): Config {
         $settings = $container->get('settings');
 
         return new Config($settings);
     },
 
-    App::class => function (ContainerInterface $container) 
-    {
+    App::class => function (ContainerInterface $container) {
         AppFactory::setContainer($container);
 
         return AppFactory::create();
     },
 
-    ErrorMiddleware::class => function (ContainerInterface $container): ErrorMiddleware
-    {
+    ErrorMiddleware::class => function (ContainerInterface $container): ErrorMiddleware {
         $settings = $container->get('settings')['error'];
         $app = $container->get(App::class);
 
