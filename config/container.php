@@ -10,7 +10,7 @@ use Slim\Middleware\ErrorMiddleware;
 
 return [
     'settings' => function () {
-        return require __DIR__ . 'settings.php';
+        return require __DIR__ . '/settings.php';
     },
 
     Config::class => function (ContainerInterface $container): Config {
