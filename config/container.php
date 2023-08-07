@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Factory\LoggerFactory;
 use App\Support\Config;
 use Psr\Container\ContainerInterface;
 use Slim\App;
@@ -38,5 +39,9 @@ return [
         );
         
         return $errorMiddleware;
+    },
+
+    LoggerFactory::class => function (ContainerInterface $container): LoggerFactory {
+        return new LoggerFactory($container->get('settings')['logger']);
     },
 ];
