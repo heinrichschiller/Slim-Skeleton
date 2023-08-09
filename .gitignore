@@ -4,4 +4,6 @@ composer.lock
 
 /var/caches/phpunit/*
 !/var/caches/phpunit/README.md
+/var/logs/*
+!/var/logs/README.md
 /vendor/
