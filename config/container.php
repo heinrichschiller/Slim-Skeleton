@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Factory\LoggerFactory;
+use App\Handler\DefaultErrorHandler;
 use App\Support\Config;
 use Psr\Container\ContainerInterface;
 use Slim\App;
@@ -15,7 +16,7 @@ return [
     },
 
     Config::class => function (ContainerInterface $container): Config {
-        $settings = $container->get('settings');
+        $settings = (array) $container->get('settings');
 
         return new Config($settings);
     },
@@ -27,17 +28,24 @@ return [
     },
 
     ErrorMiddleware::class => function (ContainerInterface $container): ErrorMiddleware {
-        $settings = $container->get('settings')['error'];
+        $settings = (array) $container->get('settings')['error'];
         $app = $container->get(App::class);
+
+        $logger = $container->get(LoggerFactory::class)
+            ->addFileHandler('error.log')
+            ->createLogger();
 
         $errorMiddleware = new ErrorMiddleware(
             $app->getCallableResolver(),
             $app->getResponseFactory(),
             (bool) $settings['display_error_details'],
             (bool) $settings['log_errors'],
-            (bool) $settings['log_error_details']
+            (bool) $settings['log_error_details'],
+            $logger
         );
         
+        $errorMiddleware->setDefaultErrorHandler($container->get(DefaultErrorHandler::class));
+
         return $errorMiddleware;
     },
 
