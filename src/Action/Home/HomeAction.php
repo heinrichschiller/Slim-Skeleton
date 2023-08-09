@@ -4,11 +4,32 @@ declare(strict_types=1);
 
 namespace App\Action\Home;
 
+use App\Factory\LoggerFactory;
+use Exception;
+use Psr\Log\LoggerInterface;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 final class HomeAction
 {
+    /**
+     * @Injection
+     * @var LoggerFactory;
+     */
+    private LoggerInterface $logger;
+
+    /**
+     * The constructor.
+     * 
+     * @param LoggerFactory $logger The LoggerFactory
+     */
+    public function __construct(LoggerFactory $logger)
+    {
+        $this->logger = $logger
+            ->addFileHandler('hello_world.log')
+            ->createLogger();
+    }
+
     /**
      * The invoker
      *
@@ -20,8 +41,19 @@ final class HomeAction
      */
     public function __invoke(Request $request, Response $response, array $args = []): Response
     {
-        $response->getBody()->write('Hello World!');
+        try {
+            $message = 'Hello World!';
 
-        return $response;
+            $response->getBody()->write($message);
+
+            $this->logger->info(sprintf('message output: %s', $message));
+
+            return $response;
+        } catch (Exception $exception) {
+            $this->logger->error($exception->getMessage());
+
+            throw $exception;
+        }
+        
     }
 }
