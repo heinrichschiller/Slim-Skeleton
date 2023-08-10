@@ -32,4 +32,4 @@ try {
 ...
 ```
 
-That's it.
+That's it. For more information about logging in Slim Framework, see the book by Daniel Opitz, [Slim 4 - eBook Vol. 1](https://ko-fi.com/s/5f182b4b22).
