@@ -10,7 +10,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 /**
  * HomeAction.
- * 
+ *
  * Shows the main page.
  */
 final class HomeAction
@@ -23,7 +23,7 @@ final class HomeAction
 
     /**
      * The constructor.
-     * 
+     *
      * @param MessageFinder $messageFinder The message finder.
      */
     public function __construct(MessageFinder $messageFinder)
@@ -47,5 +47,5 @@ final class HomeAction
         $response->getBody()->write($message->getMessage());
 
         return $response;
-}
+    }
 }

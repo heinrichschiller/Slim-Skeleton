@@ -54,7 +54,7 @@ final class LoggerFactory
      * Create Logger instance.
      *
      * @param string|null $name Logger file name
-     * 
+     *
      * @return LoggerInterface
      */
     public function createLogger(string|null $name = null): LoggerInterface
@@ -76,10 +76,10 @@ final class LoggerFactory
 
     /**
      * Add file handler.
-     * 
+     *
      * @param string $filename  Filename.
      * @param Level $level Monolog log level.
-     * 
+     *
      * @return self
      */
     public function addFileHandler(string $filename, Level $level = null): self
@@ -97,9 +97,9 @@ final class LoggerFactory
 
     /**
      * Add console handler.
-     * 
+     *
      * @param Level $level Monolog log level
-     * 
+     *
      * @return self
      */
     public function addConsoleHandler(Level $level = null): self

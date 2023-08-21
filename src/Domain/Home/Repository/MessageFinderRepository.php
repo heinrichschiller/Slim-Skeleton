@@ -11,7 +11,7 @@ final class MessageFinderRepository
 {
     /**
      * Find a message.
-     * 
+     *
      * @return array
      */
     public function findMessage(): array
