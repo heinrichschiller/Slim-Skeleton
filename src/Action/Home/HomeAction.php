@@ -4,34 +4,35 @@ declare(strict_types=1);
 
 namespace App\Action\Home;
 
-use App\Factory\LoggerFactory;
-use Exception;
-use Psr\Log\LoggerInterface;
+use App\Domain\Home\Service\MessageFinder;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
+/**
+ * HomeAction.
+ * 
+ * Shows the main page.
+ */
 final class HomeAction
 {
     /**
      * @Injection
-     * @var LoggerFactory;
+     * @var MessageFinder
      */
-    private LoggerInterface $logger;
+    private MessageFinder $messageFinder;
 
     /**
      * The constructor.
      * 
-     * @param LoggerFactory $logger The LoggerFactory
+     * @param MessageFinder $messageFinder The message finder.
      */
-    public function __construct(LoggerFactory $logger)
+    public function __construct(MessageFinder $messageFinder)
     {
-        $this->logger = $logger
-            ->addFileHandler('hello_world.log')
-            ->createLogger();
+        $this->messageFinder = $messageFinder;
     }
 
     /**
-     * The invoker
+     * The invoker.
      *
      * @param Request $request Representation of an incoming, server-side HTTP request.
      * @param Response $response Representation of an outgoing, server-side response.
@@ -41,19 +42,10 @@ final class HomeAction
      */
     public function __invoke(Request $request, Response $response, array $args = []): Response
     {
-        try {
-            $message = 'Hello World!';
+        $message = $this->messageFinder->findMessage();
 
-            $response->getBody()->write($message);
+        $response->getBody()->write($message->getMessage());
 
-            $this->logger->info(sprintf('message output: %s', $message));
-
-            return $response;
-        } catch (Exception $exception) {
-            $this->logger->error($exception->getMessage());
-
-            throw $exception;
-        }
-        
-    }
+        return $response;
+}
 }
