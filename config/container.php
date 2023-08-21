@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use App\Factory\LoggerFactory;
-use App\Handler\DefaultErrorHandler;
 use App\Support\Config;
 use Psr\Container\ContainerInterface;
 use Slim\App;
@@ -43,8 +42,6 @@ return [
             (bool) $settings['log_error_details'],
             $logger
         );
-        
-        $errorMiddleware->setDefaultErrorHandler($container->get(DefaultErrorHandler::class));
 
         return $errorMiddleware;
     },

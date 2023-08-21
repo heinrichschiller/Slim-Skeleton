@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Slim\App;
+use Slim\Middleware\ErrorMiddleware;
 
 /*
  *----------------------------------------------------------------------------
@@ -41,5 +42,5 @@ return function (App $app) {
      * Catch exceptions and errors
      *----------------------------------------------------------------------------
      */
-    $app->addErrorMiddleware(true, true, true);
+    $app->add(ErrorMiddleware::class);
 };
