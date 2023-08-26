@@ -12,6 +12,10 @@ require_once __DIR__ . '/../vendor/autoload.php';
  * Php version validation
  *----------------------------------------------------------------------------
  *
+ * PHP_VERSION_ID is available as of PHP 5.2.7.
+ * More about predefined constants, see:
+ * https://www.php.net/manual/en/reserved.constants.php
+ * 
  */
 if (!defined('PHP_VERSION_ID') || 80100 > PHP_VERSION_ID) {
     if ('cli' == PHP_SAPI) {
