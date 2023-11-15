@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Factory;
 
 use Monolog\Formatter\LineFormatter;
+use Monolog\Handler\HandlerInterface;
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Level;
@@ -75,6 +76,20 @@ final class LoggerFactory
     }
 
     /**
+     * Add handler.
+     * 
+     * @param HandlerInterface $handler Handler
+     * 
+     * @return self
+     */
+    public function addHandler(HandlerInterface $handler):self
+    {
+        $this->handler[] = $handler;
+
+        return $this;
+    }
+
+    /**
      * Add file handler.
      *
      * @param string $filename  Filename.
@@ -90,7 +105,7 @@ final class LoggerFactory
         // The last "true" here tells monolog to remove empty arrays
         $rotatingFileHandler->setFormatter(new LineFormatter(null, null, false, true));
 
-        $this->handler[] = $rotatingFileHandler;
+        $this->addHandler($rotatingFileHandler);
 
         return $this;
     }
@@ -109,7 +124,7 @@ final class LoggerFactory
         // The last "true" here tells monolog to remove empty arrays
         $streamHandler->setFormatter(new LineFormatter(null, null, false, true));
 
-        $this->handler = $streamHandler;
+        $this->addHandler($streamHandler);
 
         return $this;
     }
