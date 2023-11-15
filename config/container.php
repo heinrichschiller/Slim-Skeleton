@@ -21,9 +21,35 @@ return [
     },
 
     App::class => function (ContainerInterface $container) {
-        AppFactory::setContainer($container);
+        $app = AppFactory::createFromContainer($container);
 
-        return AppFactory::create();
+        /*
+         *----------------------------------------------------------------------------
+         * Register routes
+         *----------------------------------------------------------------------------
+         *
+         * For more informations see:
+         * https://www.slimframework.com/docs/v4/objects/routing.html
+         *
+         * Include the routes that you need. You can use web-routes for classic php
+         * applications or api-routes for REST-API applications. And of course you
+         * can use both.
+         *
+         */
+        (require __DIR__ . '/routes.php')($app);
+
+        /*
+         *----------------------------------------------------------------------------
+         * Register middleware
+         *----------------------------------------------------------------------------
+         *
+         * For more informations see:
+         * https://www.slimframework.com/docs/v4/concepts/middleware.html
+         *
+         */
+        (require __DIR__ . '/middleware.php')($app);
+
+        return $app;
     },
 
     ErrorMiddleware::class => function (ContainerInterface $container): ErrorMiddleware {

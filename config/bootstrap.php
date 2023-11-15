@@ -15,7 +15,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
  * PHP_VERSION_ID is available as of PHP 5.2.7.
  * More about predefined constants, see:
  * https://www.php.net/manual/en/reserved.constants.php
- * 
+ *
  */
 if (!defined('PHP_VERSION_ID') || 80100 > PHP_VERSION_ID) {
     if ('cli' == PHP_SAPI) {
@@ -39,43 +39,8 @@ if (!defined('PHP_VERSION_ID') || 80100 > PHP_VERSION_ID) {
  * https://php-di.org/
  *
  */
-$containerBuilder = new ContainerBuilder;
-$containerBuilder->addDefinitions(__DIR__ . '/container.php');
+$container = (new ContainerBuilder())
+    ->addDefinitions(__DIR__ . '/container.php')
+    ->build();
 
-$container = $containerBuilder->build();
-
-/*
- *----------------------------------------------------------------------------
- * Create Slim App instance
- *----------------------------------------------------------------------------
- *
- */
-$app = $container->get(App::class);
-
-/*
- *----------------------------------------------------------------------------
- * Register routes
- *----------------------------------------------------------------------------
- *
- * For more informations see:
- * https://www.slimframework.com/docs/v4/objects/routing.html
- *
- * Include the routes that you need. You can use web-routes for classic php
- * applications or api-routes for REST-API applications. And of course you
- * can use both.
- *
- */
-(require __DIR__ . '/routes.php')($app);
-
-/*
- *----------------------------------------------------------------------------
- * Register middleware
- *----------------------------------------------------------------------------
- *
- * For more informations see:
- * https://www.slimframework.com/docs/v4/concepts/middleware.html
- *
- */
-(require __DIR__ . '/middleware.php')($app);
-
-return $app;
+return $container->get(App::class);
