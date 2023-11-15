@@ -77,9 +77,9 @@ final class LoggerFactory
 
     /**
      * Add handler.
-     * 
+     *
      * @param HandlerInterface $handler Handler
-     * 
+     *
      * @return self
      */
     public function addHandler(HandlerInterface $handler):self
