@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Factory\LoggerFactory;
 use App\Support\Config;
 use Psr\Container\ContainerInterface;
+use Selective\BasePath\BasePathMiddleware;
 use Slim\App;
 use Slim\Factory\AppFactory;
 use Slim\Middleware\ErrorMiddleware;
@@ -52,6 +53,10 @@ return [
         return $app;
     },
 
+    BasePathMiddleware::class => function (ContainerInterface $container) {
+        return new BasePathMiddleware($container->get(App::class));
+    },
+    
     ErrorMiddleware::class => function (ContainerInterface $container): ErrorMiddleware {
         $settings = (array) $container->get('settings')['error'];
         $app = $container->get(App::class);

@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Selective\BasePath\BasePathMiddleware;
 use Slim\App;
 use Slim\Middleware\ErrorMiddleware;
 
@@ -36,6 +37,13 @@ return function (App $app) {
      *----------------------------------------------------------------------------
      */
     $app->addRoutingMiddleware();
+
+    /*
+     *----------------------------------------------------------------------------
+     * Add the Selective BasePathMiddleware
+     *----------------------------------------------------------------------------
+     */
+    $app->add(BasePathMiddleware::class);
 
     /*
      *----------------------------------------------------------------------------
