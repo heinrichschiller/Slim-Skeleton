@@ -33,7 +33,7 @@ return function(App $app)
 }
 
 ```
-Now start a terminal and go to this slim project. Type **composer serve** and start the php native webserver. Type in your browser urlbar **localhost:8080** and see your message.
+Now start a terminal and go to this slim project. Type **composer start** and start the php native webserver. Type in your browser urlbar **localhost:8080** and see your message.
 
 ___
 
@@ -72,4 +72,4 @@ return function(App $app)
     $app->get('/', \App\Action\Home\HomeAction::class);
 }
 ```
-Now start a terminal and go to this slim project. Type **composer serve** and start the php native webserver. Type in your browser urlbar **localhost:8080** and see your JSON-Data.
+Now start a terminal and go to this slim project. Type **composer start** and start the php native webserver. Type in your browser urlbar **localhost:8080** and see your JSON-Data.
