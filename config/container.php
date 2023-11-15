@@ -9,16 +9,12 @@ use Selective\BasePath\BasePathMiddleware;
 use Slim\App;
 use Slim\Factory\AppFactory;
 use Slim\Middleware\ErrorMiddleware;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputOption;
 
 return [
     'settings' => function () {
         return require __DIR__ . '/settings.php';
-    },
-
-    Config::class => function (ContainerInterface $container): Config {
-        $settings = (array) $container->get('settings');
-
-        return new Config($settings);
     },
 
     App::class => function (ContainerInterface $container) {
@@ -53,10 +49,30 @@ return [
         return $app;
     },
 
+    Application::class => function (ContainerInterface $container) {
+        $application = new Application();
+
+        $application->getDefinition()->addOption(
+            new InputOption('--env', '-e', InputOption::VALUE_REQUIRED, 'The Environment name.', 'dev')
+        );
+
+        foreach ($container->get('settings')['commands'] as $class) {
+            $application->add($container->get($class));
+        }
+
+        return $application;
+    },
+
     BasePathMiddleware::class => function (ContainerInterface $container) {
         return new BasePathMiddleware($container->get(App::class));
     },
     
+    Config::class => function (ContainerInterface $container): Config {
+        $settings = (array) $container->get('settings');
+
+        return new Config($settings);
+    },
+
     ErrorMiddleware::class => function (ContainerInterface $container): ErrorMiddleware {
         $settings = (array) $container->get('settings')['error'];
         $app = $container->get(App::class);
