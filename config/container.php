@@ -3,10 +3,12 @@
 declare(strict_types=1);
 
 use App\Factory\LoggerFactory;
+use App\Handler\NotFoundHandler;
 use App\Support\Config;
 use Psr\Container\ContainerInterface;
 use Selective\BasePath\BasePathMiddleware;
 use Slim\App;
+use Slim\Exception\HttpNotFoundException;
 use Slim\Factory\AppFactory;
 use Slim\Middleware\ErrorMiddleware;
 use Symfony\Component\Console\Application;
@@ -27,10 +29,6 @@ return [
          *
          * For more informations see:
          * https://www.slimframework.com/docs/v4/objects/routing.html
-         *
-         * Include the routes that you need. You can use web-routes for classic php
-         * applications or api-routes for REST-API applications. And of course you
-         * can use both.
          *
          */
         (require __DIR__ . '/routes.php')($app);
@@ -77,9 +75,12 @@ return [
         $settings = (array) $container->get('settings')['error'];
         $app = $container->get(App::class);
 
-        $logger = $container->get(LoggerFactory::class)
-            ->addFileHandler('error.log')
-            ->createLogger();
+        $logger = null;
+        if (isset($settings['log_file'])) {
+            $logger = $container->get(LoggerFactory::class)
+                ->addFileHandler($settings['log_file'])
+                ->createLogger();
+        }
 
         $errorMiddleware = new ErrorMiddleware(
             $app->getCallableResolver(),
@@ -89,6 +90,9 @@ return [
             (bool) $settings['log_error_details'],
             $logger
         );
+
+        // Set the Not Found Error
+        $errorMiddleware->setErrorHandler(HttpNotFoundException::class, NotFoundHandler::class);
 
         return $errorMiddleware;
     },
