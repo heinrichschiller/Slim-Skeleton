@@ -26,6 +26,12 @@ https://github.com/slimphp
 
 https://github.com/slimphp/Slim-Skeleton
 
+## This Skeleton is based on:
+
+- https://github.com/odan/slim4-skeleton
+- https://odan.github.io/2019/11/05/slim4-tutorial.html
+- https://ko-fi.com/s/5f182b4b22
+
 ## Install
 
 composer create-project heinrichschiller/slim-skeleton [my-app-name] --prefer-dist
@@ -34,11 +40,6 @@ composer create-project heinrichschiller/slim-skeleton [my-app-name] --prefer-di
 
 - PHP 8.1+
 - Apache with mod_rewrite
-
-## This Skeleton is based on:
-
-- https://github.com/odan/slim4-skeleton
-- https://odan.github.io/2019/11/05/slim4-tutorial.html
 
 ## Features
 
@@ -56,5 +57,4 @@ composer create-project heinrichschiller/slim-skeleton [my-app-name] --prefer-di
 
 - phpunit/phpunit
 - phpstan/phpstan
-- symfony/var-dumper
 - squizlabs/php_codesniffer
