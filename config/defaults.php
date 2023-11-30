@@ -10,6 +10,11 @@ date_default_timezone_set('Europe/Berlin');
 
 $settings = [];
 
+$settings['commands'] = [
+    \App\Console\ExampleCommand::class,
+    // Add more here ...
+];
+
 // Error handler
 $settings['error'] = [
     // Should be set to false for the production environment
@@ -34,10 +39,5 @@ $settings['logger'] = [
 ];
 
 $settings['db'] = [];
-
-$settings['commands'] = [
-    \App\Console\ExampleCommand::class,
-    // Add more here ...
-];
 
 return $settings;
