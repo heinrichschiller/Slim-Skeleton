@@ -17,13 +17,13 @@ require_once __DIR__ . '/../vendor/autoload.php';
  * https://www.php.net/manual/en/reserved.constants.php
  *
  */
-if (!defined('PHP_VERSION_ID') || 80100 > PHP_VERSION_ID) {
+if (!defined('PHP_VERSION_ID') || 80200 > PHP_VERSION_ID) {
     if ('cli' == PHP_SAPI) {
-        echo 'This Slim-Skeleton support PHP 8.1 or later.';
+        echo 'This Slim-Skeleton support PHP 8.2 or later.';
     } else {
         echo <<<HTML
             <div>
-                <p>This Slim-Skeleton supports PHP 8.1 or later.</p>
+                <p>This Slim-Skeleton supports PHP 8.2 or later.</p>
             </div>
         HTML;
         exit(1);
