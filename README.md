@@ -38,8 +38,7 @@ composer create-project heinrichschiller/slim-skeleton [my-app-name] --prefer-di
 
 ## Requirements
 
-- PHP 8.1+
-- Apache with mod_rewrite
+- PHP 8.2+
 
 ## Features
 
