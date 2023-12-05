@@ -1,7 +1,6 @@
 # Slim-Skeleton
 
 [![Coverage Status](https://coveralls.io/repos/github/heinrichschiller/Slim-Skeleton/badge.svg?branch=main)](https://coveralls.io/github/heinrichschiller/Slim-Skeleton?branch=main)
-[![Build Status](https://travis-ci.com/heinrichschiller/Slim-Skeleton.svg?branch=main)](https://travis-ci.com/github/heinrichschiller/Slim-Skeleton)
 [![Latest Stable Version](https://poser.pugx.org/heinrichschiller/slim-skeleton/v)](//packagist.org/packages/heinrichschiller/slim-skeleton)
 [![Latest Unstable Version](https://poser.pugx.org/heinrichschiller/slim-skeleton/v/unstable)](//packagist.org/packages/heinrichschiller/slim-skeleton)
 [![License](https://poser.pugx.org/heinrichschiller/slim-skeleton/license)](//packagist.org/packages/heinrichschiller/slim-skeleton)

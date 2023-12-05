@@ -1,9 +1,0 @@
-os: linux
-dist: mantic
-
-language: php
-php:
-  - 8.2
-
-install:
-  - composer install -n
