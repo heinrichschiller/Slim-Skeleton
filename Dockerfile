@@ -18,6 +18,7 @@ RUN apt-get update && \
         php-cli \
         php-curl \
         php8.2-dev \
+        php8.2-phpdbg \
         php-apcu \
         php-gd \
         php-intl \
