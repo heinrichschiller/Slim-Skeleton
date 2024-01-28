@@ -7,26 +7,13 @@ use Slim\App;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-/*
- *----------------------------------------------------------------------------
- * Php version validation
- *----------------------------------------------------------------------------
- *
- * PHP_VERSION_ID is available as of PHP 5.2.7.
- * More about predefined constants, see:
- * https://www.php.net/manual/en/reserved.constants.php
- *
- */
-if (!defined('PHP_VERSION_ID') || 80200 > PHP_VERSION_ID) {
+if (version_compare(phpversion(), '8.2.0', '<=')) {
+    $message = 'This Slim-Skeleton is supported from PHP 8.2.0 or higher. Installed PHP version is: ' . phpversion();
+
     if ('cli' == PHP_SAPI) {
-        echo 'This Slim-Skeleton support PHP 8.2 or later.';
+        echo $message;
     } else {
-        echo <<<HTML
-            <div>
-                <p>This Slim-Skeleton supports PHP 8.2 or later.</p>
-            </div>
-        HTML;
-        exit(1);
+        exit($message);
     }
 }
 
