@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 use App\Factory\LoggerFactory;
 use App\Handler\NotFoundHandler;
@@ -22,26 +20,7 @@ return [
     App::class => function (ContainerInterface $container) {
         $app = AppFactory::createFromContainer($container);
 
-        /*
-         *----------------------------------------------------------------------------
-         * Register routes
-         *----------------------------------------------------------------------------
-         *
-         * For more informations see:
-         * https://www.slimframework.com/docs/v4/objects/routing.html
-         *
-         */
         (require __DIR__ . '/routes.php')($app);
-
-        /*
-         *----------------------------------------------------------------------------
-         * Register middleware
-         *----------------------------------------------------------------------------
-         *
-         * For more informations see:
-         * https://www.slimframework.com/docs/v4/concepts/middleware.html
-         *
-         */
         (require __DIR__ . '/middleware.php')($app);
 
         return $app;
@@ -85,7 +64,6 @@ return [
             $logger
         );
 
-        // Set the Not Found Error
         $errorMiddleware->setErrorHandler(HttpNotFoundException::class, NotFoundHandler::class);
 
         return $errorMiddleware;
