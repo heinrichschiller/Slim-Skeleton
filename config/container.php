@@ -28,12 +28,13 @@ return [
 
     Application::class => function (ContainerInterface $container) {
         $application = new Application();
+        $config = $container->get(Configuration::class);
 
         $application->getDefinition()->addOption(
             new InputOption('--env', '-e', InputOption::VALUE_REQUIRED, 'The Environment name.', 'dev')
         );
 
-        foreach ($container->get('settings')['commands'] as $class) {
+        foreach ($config->getArray('commands') as $class) {
             $application->add($container->get($class));
         }
 
