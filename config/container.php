@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 use App\Factory\LoggerFactory;
 use App\Handler\NotFoundHandler;
-use App\Support\Config;
 use Psr\Container\ContainerInterface;
 use Selective\BasePath\BasePathMiddleware;
+use Selective\Config\Configuration;
 use Slim\App;
 use Slim\Exception\HttpNotFoundException;
 use Slim\Factory\AppFactory;
@@ -15,8 +15,8 @@ use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputOption;
 
 return [
-    'settings' => function () {
-        return require __DIR__ . '/settings.php';
+    Configuration::class => function () {
+        return new Configuration(require __DIR__ . '/settings.php');
     },
 
     App::class => function (ContainerInterface $container) {
@@ -64,30 +64,24 @@ return [
     BasePathMiddleware::class => function (ContainerInterface $container) {
         return new BasePathMiddleware($container->get(App::class));
     },
-    
-    Config::class => function (ContainerInterface $container): Config {
-        $settings = (array) $container->get('settings');
-
-        return new Config($settings);
-    },
 
     ErrorMiddleware::class => function (ContainerInterface $container): ErrorMiddleware {
-        $settings = (array) $container->get('settings')['error'];
         $app = $container->get(App::class);
+        $config = $container->get(Configuration::class);
 
         $logger = null;
-        if (isset($settings['log_file'])) {
+        if ($config->getString('error.log_file')) {
             $logger = $container->get(LoggerFactory::class)
-                ->addFileHandler($settings['log_file'])
+                ->addFileHandler($config->getString('error.log_file'))
                 ->createLogger();
         }
 
         $errorMiddleware = new ErrorMiddleware(
             $app->getCallableResolver(),
             $app->getResponseFactory(),
-            (bool) $settings['display_error_details'],
-            (bool) $settings['log_errors'],
-            (bool) $settings['log_error_details'],
+            (bool) $config->getString('error.display_error_details'),
+            (bool) $config->getString('error.log_errors'),
+            (bool) $config->getString('error.log_error_details'),
             $logger
         );
 
@@ -98,6 +92,8 @@ return [
     },
 
     LoggerFactory::class => function (ContainerInterface $container): LoggerFactory {
-        return new LoggerFactory($container->get('settings')['logger']);
+        $config = $container->get(Configuration::class);
+
+        return new LoggerFactory($config->getArray('logger'));
     },
 ];
