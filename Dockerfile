@@ -56,7 +56,7 @@ COPY . /var/www/html
 
 WORKDIR /var/www/html
 
-RUN chown -R www-data.www-data /var/www/html
+RUN chown -R www-data:www-data /var/www/html
 
 # Remove ubuntu index.html
 RUN rm /var/www/html/index.html
@@ -64,4 +64,3 @@ RUN rm /var/www/html/index.html
 EXPOSE 80
 
 CMD apachectl -D FOREGROUND
-
