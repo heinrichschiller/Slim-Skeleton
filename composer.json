@@ -13,7 +13,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^8.2",
-        "slim/slim": "^4.12",
+        "slim/slim": "^4.13",
         "php-di/php-di": "^7.0",
         "monolog/monolog": "^3.5",
         "nyholm/psr7": "^1.8",
