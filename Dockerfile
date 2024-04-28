@@ -58,6 +58,9 @@ WORKDIR /var/www/html
 
 RUN chown -R www-data:www-data /var/www/html
 
+# Install required PHP-Packages automatically
+RUN composer install
+
 # Remove ubuntu index.html
 RUN rm /var/www/html/index.html
 
