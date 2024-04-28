@@ -56,10 +56,10 @@ COPY . /var/www/html
 
 WORKDIR /var/www/html
 
-RUN chown -R www-data:www-data /var/www/html
+# Install required dependencies
+RUN composer install --no-interaction --no-plugins --no-scripts --prefer-dist
 
-# Install required PHP-Packages automatically
-RUN composer install
+RUN chown -R www-data:www-data /var/www/html
 
 # Remove ubuntu index.html
 RUN rm /var/www/html/index.html
