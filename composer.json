@@ -28,7 +28,7 @@
         "phpunit/phpunit": "^11.1",
         "symfony/console": "^7.0",
         "phpstan/phpstan": "^1.11",
-        "squizlabs/php_codesniffer": "^3.9",
+        "squizlabs/php_codesniffer": "^3.10",
         "selective/test-traits": "^4.1"
     },
     "autoload": {
