@@ -26,7 +26,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^11.1",
-        "symfony/console": "^7.0",
+        "symfony/console": "^7.1",
         "phpstan/phpstan": "^1.11",
         "squizlabs/php_codesniffer": "^3.10",
         "selective/test-traits": "^4.1"
