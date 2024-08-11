@@ -1,17 +1,13 @@
 # Slim-Skeleton
 
-[![Coverage Status](https://coveralls.io/repos/github/heinrichschiller/Slim-Skeleton/badge.svg?branch=main)](https://coveralls.io/github/heinrichschiller/Slim-Skeleton?branch=main)
-[![Latest Stable Version](https://poser.pugx.org/heinrichschiller/slim-skeleton/v)](//packagist.org/packages/heinrichschiller/slim-skeleton)
-[![Latest Unstable Version](https://poser.pugx.org/heinrichschiller/slim-skeleton/v/unstable)](//packagist.org/packages/heinrichschiller/slim-skeleton)
-[![License](https://poser.pugx.org/heinrichschiller/slim-skeleton/license)](//packagist.org/packages/heinrichschiller/slim-skeleton)
-
-My own simple slim skeleton app, for websites, apis and webapps. It is not better than the official Slim-Skeleton, it is more a composer package and has my own configuration for my work with Slim. If you don't know what to take, take the original :)
+This is Slim5 testing branch
 
 See below:
 
-## Slim-Framework Mainpage
+## Slim - Work on Slim 5 has begun
 
-https://www.slimframework.com
+https://odan.github.io/2024/07/26/slim5.html
+https://github.com/slimphp/Slim/wiki/Slim-5-Road-Map
 
 ## Slim-Documentation
 
