@@ -18,7 +18,7 @@ final class MessageFinderRepository
     {
         // Imagine it comes from the database ...
         return [
-            'Hello World!',
+            'Hello Slim5!',
         ];
     }
 }
