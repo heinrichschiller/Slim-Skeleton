@@ -23,6 +23,15 @@
     <include>
       <directory suffix=".php">src</directory>
     </include>
+    <exclude>
+      <directory>bin</directory>
+      <directory>build</directory>
+      <directory>docs</directory>
+      <directory>public</directory>
+      <directory>resources</directory>
+      <directory>tmp</directory>
+      <directory>vendor</directory>
+  </exclude>
   </source>
 </phpunit>
 
