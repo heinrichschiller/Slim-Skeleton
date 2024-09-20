@@ -3,6 +3,7 @@
 
 composer.lock
 
+/build/
 /var/caches/phpunit/*
 !/var/caches/phpunit/README.md
 /var/logs/*
