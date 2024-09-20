@@ -7,7 +7,7 @@ namespace App\Domain\Home\Service;
 use App\Factory\LoggerFactory;
 use Exception;
 use Psr\Log\LoggerInterface;
-use App\Domain\Home\Message;
+use App\Domain\Home\Data\Message;
 use App\Domain\Home\Repository\MessageFinderRepository;
 
 /**
