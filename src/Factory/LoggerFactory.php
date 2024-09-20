@@ -13,7 +13,7 @@ use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Uid\Uuid;
 
-final class LoggerFactory
+final class LoggerFactory implements LoggerFactoryInterface
 {
     /**
      * @var string
