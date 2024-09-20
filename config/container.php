@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 use App\Factory\LoggerFactory;
 use App\Handler\NotFoundHandler;
+use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Container\ContainerInterface;
+use Psr\Http\Message\ServerRequestFactoryInterface;
 use Selective\BasePath\BasePathMiddleware;
 use Selective\Config\Configuration;
 use Slim\App;
@@ -76,5 +78,9 @@ return [
         $config = $container->get(Configuration::class);
 
         return new LoggerFactory($config->getArray('logger'));
+    },
+
+    ServerRequestFactoryInterface::class => function (ContainerInterface $container): Psr17Factory {
+        return $container->get(Psr17Factory::class);
     },
 ];
