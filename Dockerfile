@@ -1,4 +1,4 @@
-FROM ubuntu:23.10
+FROM ubuntu:24.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -17,8 +17,8 @@ RUN apt-get update && \
         php \
         php-cli \
         php-curl \
-        php8.2-dev \
-        php8.2-phpdbg \
+        php8.3-dev \
+        php8.3-phpdbg \
         php-apcu \
         php-gd \
         php-intl \
