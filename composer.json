@@ -22,7 +22,7 @@
         "selective/array-reader": "^2.1",
         "selective/basepath": "^2.2",
         "selective/config": "^1.2",
-        "symfony/uid": "^7.1"
+        "symfony/uid": "^7.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^11.4",
