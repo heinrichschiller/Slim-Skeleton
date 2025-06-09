@@ -19,7 +19,7 @@
         "nyholm/psr7": "^1.8",
         "nyholm/psr7-server": "^1.1",
         "fig/http-message-util": "^1.1",
-        "selective/array-reader": "^2.1",
+        "selective/array-reader": "^2.2",
         "selective/basepath": "^2.2",
         "selective/config": "^1.2",
         "symfony/uid": "^7.2"
