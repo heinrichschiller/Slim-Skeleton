@@ -58,6 +58,9 @@
             "@test:phpcs",
             "@test:phpcbf"
         ],
-        "test:coverage": "php -d xdebug.mode=coverage -r \"require 'vendor/bin/phpunit';\" -- --configuration phpunit.xml --do-not-cache-result --colors=always --coverage-clover build/logs/clover.xml --coverage-html build/coverage"
+        "test:coverage": [
+            "@putenv XDEBUG_MODE=coverage",
+            "phpunit --configuration phpunit.xml --do-not-cache-result --colors=always --display-warnings --display-deprecations --coverage-clover build/coverage/clover.xml --coverage-html build/coverage --coverage-text"
+        ]
     }
 }
