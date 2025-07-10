@@ -17,7 +17,7 @@ final class MessageFinder
 {
     /**
      * @Injection
-     * @var LoggerInterface;
+     * @var LoggerInterface
      */
     private LoggerInterface $logger;
 

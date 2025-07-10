@@ -12,7 +12,7 @@ final class MessageFinderRepository
     /**
      * Find a message.
      *
-     * @return array
+     * @return array<string>
      */
     public function findMessage(): array
     {

@@ -26,7 +26,7 @@ final class LoggerFactory implements LoggerFactoryInterface
     private Level $level;
 
     /**
-     * @var array
+     * @var array<mixed>
      */
     private array $handler = [];
 
@@ -38,7 +38,7 @@ final class LoggerFactory implements LoggerFactoryInterface
     /**
      * The constructor.
      *
-     * @param array $settings Logger settings.
+     * @param array<mixed> $settings Logger settings.
      */
     public function __construct(array $settings)
     {

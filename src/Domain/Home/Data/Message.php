@@ -17,7 +17,7 @@ final class Message
      * @param string $message A message.
      */
     public function __construct(
-        private ?string $message = null,
+        private string $message = '',
     ) {
         $this->setMessage($message);
     }
@@ -35,11 +35,11 @@ final class Message
     /**
      * Set a message.
      *
-     * @param null|string $message A message.
+     * @param string $message A message.
      *
      * @return void
      */
-    private function setMessage(?string $message): void
+    private function setMessage(string $message): void
     {
         $this->message = $message;
     }
