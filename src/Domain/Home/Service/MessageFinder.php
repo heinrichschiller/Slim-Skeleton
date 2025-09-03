@@ -27,6 +27,12 @@ final class MessageFinder
      */
     private MessageFinderRepository $repository;
 
+    /**
+     * The constructor.
+     * 
+     * @param LoggerFactory $logger The logger factory
+     * @param MessageFinderRepository $repository Repository where a message can be found.
+     */
     public function __construct(LoggerFactory $logger, MessageFinderRepository $repository)
     {
         $this->logger = $logger
@@ -36,6 +42,11 @@ final class MessageFinder
         $this->repository = $repository;
     }
 
+    /**
+     * Find message.
+     * 
+     * @return Message
+     */
     public function findMessage(): Message
     {
         try {
