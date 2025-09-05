@@ -43,16 +43,17 @@ composer create-project heinrichschiller/slim-skeleton [my-app-name] --prefer-di
 
 * [Standard PHP package skeleton](https://github.com/php-pds/skeleton)
 * HTTP router (Slim)
-* HTTP message interfaces (PSR-7)
-* HTTP Server Request Handlers, Middleware (PSR-15)
-* Dependency injection container (PSR-11)
-* Autoloader (PSR-4)
+* [HTTP message interfaces (PSR-7)](https://www.php-fig.org/psr/psr-7/)
+* [HTTP Server Request Handlers, Middleware (PSR-15)](https://www.php-fig.org/psr/psr-15/)
+* [Dependency injection container (PSR-11)](https://www.php-fig.org/psr/psr-11/)
+* [Autoloader (PSR-4)](https://www.php-fig.org/psr/psr-4/)
 * Single action controllers
-* Unit- and integration tests
-* Console Commands
+* [Unit- and integration tests](https://phpunit.de/)
+* [Console Commands](https://symfony.com/doc/current/components/console.html)
 
 ## Developer tools
 
+- friendsofphp/php-cs-fixer
 - phpunit/phpunit
 - phpstan/phpstan
 - squizlabs/php_codesniffer
