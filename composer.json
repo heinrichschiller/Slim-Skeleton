@@ -29,7 +29,7 @@
         "phpunit/phpunit": "^12.3",
         "symfony/console": "^7.3",
         "phpstan/phpstan": "^2.1",
-        "squizlabs/php_codesniffer": "^3.13",
+        "squizlabs/php_codesniffer": "^4.0",
         "selective/test-traits": "^4.2",
         "dg/bypass-finals": "^1.9"
     },
