@@ -4,6 +4,8 @@
     <arg name="extensions" value="php" />
 
     <config name="ignore_warnings_on_exit" value="1" />
+    <config name="ignore_errors_on_exit" value="0" />
+    <config name="ignore_non_auto_fixable_on_exit" value="0" />
 
     <file>./bin</file>
     <file>./config</file>
@@ -11,5 +13,5 @@
     <file>./src</file>
     <file>./tests</file>
 
-    <rule ref="PSR2"></rule>
+    <rule ref="PSR12"></rule>
 </ruleset>
