@@ -29,7 +29,7 @@ final class MessageFinder
 
     /**
      * The constructor.
-     * 
+     *
      * @param LoggerFactory $logger The logger factory
      * @param MessageFinderRepository $repository Repository where a message can be found.
      */
@@ -38,13 +38,13 @@ final class MessageFinder
         $this->logger = $logger
             ->addFileHandler('hello_world.log')
             ->createLogger();
-        
+
         $this->repository = $repository;
     }
 
     /**
      * Find message.
-     * 
+     *
      * @return Message
      */
     public function findMessage(): Message

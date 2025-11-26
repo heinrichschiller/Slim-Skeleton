@@ -82,7 +82,7 @@ final class LoggerFactory implements LoggerFactoryInterface
      *
      * @return self
      */
-    public function addHandler(HandlerInterface $handler):self
+    public function addHandler(HandlerInterface $handler): self
     {
         $this->handler[] = $handler;
 
