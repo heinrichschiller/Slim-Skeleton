@@ -21,7 +21,7 @@
         "fig/http-message-util": "^1.1",
         "selective/array-reader": "^2.2",
         "selective/basepath": "^2.3",
-        "selective/config": "^1.2",
+        "selective/config": "^1.3",
         "symfony/uid": "^7.3"
     },
     "require-dev": {
