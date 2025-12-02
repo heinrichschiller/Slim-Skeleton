@@ -27,7 +27,7 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.91",
         "phpunit/phpunit": "^12.4",
-        "symfony/console": "^7.3",
+        "symfony/console": "^7.4",
         "phpstan/phpstan": "^2.1",
         "squizlabs/php_codesniffer": "^4.0",
         "selective/test-traits": "^4.2",
