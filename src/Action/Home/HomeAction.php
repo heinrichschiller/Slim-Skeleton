@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Action\Home;
 
 use App\Domain\Home\Service\MessageFinder;
+use Fig\Http\Message\StatusCodeInterface;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
@@ -42,10 +43,21 @@ final class HomeAction
      */
     public function __invoke(Request $request, Response $response, array $args = []): Response
     {
-        $message = $this->messageFinder->findMessage();
+        $id = (int) ($args['id'] ?? 0);
+        $message = $this->messageFinder->findById($id);
+
+        if ($message === null) {
+            $response->getBody()->write('Message not found');
+
+            return $response
+                ->withStatus(StatusCodeInterface::STATUS_NOT_FOUND)
+                ->withHeader('Content-Type', 'text/plain');
+        }
 
         $response->getBody()->write($message->getMessage());
 
-        return $response;
+        return $response
+            ->withStatus(StatusCodeInterface::STATUS_OK)
+            ->withHeader('Content-Type', 'text/plain');
     }
 }

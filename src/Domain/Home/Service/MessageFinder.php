@@ -36,7 +36,7 @@ final class MessageFinder
     public function __construct(LoggerFactory $logger, MessageFinderRepository $repository)
     {
         $this->logger = $logger
-            ->addFileHandler('hello_world.log')
+            ->addFileHandler('home-action.log')
             ->createLogger();
 
         $this->repository = $repository;
@@ -47,18 +47,18 @@ final class MessageFinder
      *
      * @return Message
      */
-    public function findMessage(): Message
+    public function findById(int $id): ?Message
     {
-        try {
-            $message = $this->repository->findMessage();
+        $message = $this->repository->findById($id);
 
-            $this->logger->info(sprintf('message output: %s', $message[0]));
+        if ($message !== null) {
+            $this->logger->info(sprintf('message output: %s', $message));
 
-            return new Message($message[0]);
-        } catch (Exception $exception) {
-            $this->logger->error($exception->getMessage());
-
-            throw $exception;
+            return new Message($id, $message);
         }
+
+        $this->logger->warning('warning output: message is null');
+
+        return null;
     }
 }

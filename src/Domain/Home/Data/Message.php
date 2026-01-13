@@ -6,20 +6,30 @@ namespace App\Domain\Home\Data;
 
 /**
  * Message
- *
- * Or something like that ...
  */
 final class Message
 {
     /**
      * The constructor.
      *
-     * @param string $message A message.
+     * @param int $id Id of a message.
+     * @param string $message The message.
      */
     public function __construct(
+        private int $id = 0,
         private string $message = '',
     ) {
         $this->setMessage($message);
+    }
+
+    /**
+     * Get the id of a message.
+     *
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
     }
 
     /**
