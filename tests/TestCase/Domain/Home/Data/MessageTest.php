@@ -13,8 +13,12 @@ class MessageTest extends TestCase
 {
     public function testMessageHasInput(): void
     {
-        $message = new Message('Hello World!');
+        $message = new Message(
+            id: 0,
+            message: 'Hello World!'
+        );
 
+        $this->assertSame(0, $message->getId());
         $this->assertSame('Hello World!', $message->getMessage());
     }
 }
