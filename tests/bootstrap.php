@@ -6,4 +6,6 @@ use DG\BypassFinals;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-BypassFinals::enable();
+if (PHP_SAPI === 'cli' && defined('PHPUNIT_COMPOSER_INSTALL')) {
+    BypassFinals::enable();
+}
