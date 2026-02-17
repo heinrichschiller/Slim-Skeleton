@@ -25,7 +25,7 @@
         "symfony/uid": "^8.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.92",
+        "friendsofphp/php-cs-fixer": "^3.94",
         "phpunit/phpunit": "^12.5",
         "symfony/console": "^8.0",
         "phpstan/phpstan": "^2.1",
@@ -48,11 +48,15 @@
     },
     "scripts": {
         "start": "php -S localhost:8080 -t public",
+        "test:cs-check": "php-cs-fixer check",
+        "test:cs-fix": "php-cs-fixer fix",
         "test:phpstan": "phpstan analyse",
         "test:phpunit": "phpunit --configuration phpunit.xml --colors=always",
         "test:phpcs": "phpcs --standard=phpcs.xml",
         "test:phpcbf": "phpcbf --standard=phpcs.xml",
         "test:all": [
+            "@test:cs-check",
+            "@test:cs-fix",
             "@test:phpstan",
             "@test:phpunit",
             "@test:phpcs",
