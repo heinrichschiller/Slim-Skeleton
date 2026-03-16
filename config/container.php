@@ -39,7 +39,7 @@ return [
         );
 
         foreach ($config->getArray('commands') as $class) {
-            $application->add($container->get($class));
+            $application->addCommand($container->get($class));
         }
 
         return $application;
