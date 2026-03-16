@@ -30,7 +30,7 @@
         "symfony/console": "^8.0",
         "phpstan/phpstan": "^2.1",
         "squizlabs/php_codesniffer": "^4.0",
-        "selective/test-traits": "^4.2",
+        "selective/test-traits": "^4.3",
         "dg/bypass-finals": "^1.9"
     },
     "autoload": {
