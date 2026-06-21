@@ -26,20 +26,20 @@ final class ValidateIdParamMiddleware implements MiddlewareInterface
 {
     /**
      * The constructor.
-     * 
+     *
      * @param string $paramName Name of the route parameter to validate.
      */
     public function __construct(
         private readonly string $paramName = 'id',
-    )
-    {}
+    ) {
+    }
 
     /**
      * Process an incoming server request.
-     * 
+     *
      * @param Request $request Representation of an incoming, server-side HTTP request.
      * @param Handler $handler Handles a server request and produces a response.
-     * 
+     *
      * @return Response Representation of an outgoing, server-side response.
      */
     public function process(Request $request, Handler $handler): Response
@@ -56,7 +56,7 @@ final class ValidateIdParamMiddleware implements MiddlewareInterface
         if (!array_key_exists($this->paramName, $args)) {
             return $handler->handle($request);
         }
-        
+
         $raw = $args[$this->paramName];
 
         if (!$this->isValidId($raw)) {
@@ -81,7 +81,7 @@ final class ValidateIdParamMiddleware implements MiddlewareInterface
     {
         $isValid = false;
 
-        if(preg_match('/^\d+$/', $raw) === 1) {
+        if (preg_match('/^\d+$/', $raw) === 1) {
             $isValid = true;
         }
 
@@ -90,15 +90,15 @@ final class ValidateIdParamMiddleware implements MiddlewareInterface
 
     /**
      * Create a "400 Bad Request" response.
-     * 
+     *
      * @return Response
      */
     private function badRequestResponse(): Response
     {
-        $response = (new Psr17Factory)
+        $response = (new Psr17Factory())
             ->createResponse(StatusCodeInterface::STATUS_BAD_REQUEST)
             ->withHeader('Content-Type', 'text/plain');
-        
+
         $response->getBody()->write('Bad request: invalid id');
 
         return $response;
