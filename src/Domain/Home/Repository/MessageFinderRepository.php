@@ -22,8 +22,6 @@ final class MessageFinderRepository
     ];
 
     /**
-     * Find all messages.
-     *
      * @return array<int, array{id:int, message:string}>
      */
     public function findAll(): array
@@ -31,13 +29,6 @@ final class MessageFinderRepository
         return $this->items;
     }
 
-    /**
-     * Find a message by id.
-     *
-     * @param int $id
-     *
-     * @return string|null
-     */
     public function findById(int $id): ?string
     {
         foreach ($this->items as $item) {

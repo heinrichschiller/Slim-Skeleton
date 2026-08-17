@@ -13,17 +13,6 @@ use Throwable;
 
 final class NotFoundHandler implements ErrorHandlerInterface
 {
-    /**
-     * The invoker.
-     *
-     * @param Request $request
-     * @param Throwable $exception
-     * @param bool $displayErrorDetails
-     * @param bool $logErrors
-     * @param bool $logErrorDetails
-     *
-     * @return ResponseInterface
-     */
     public function __invoke(
         Request $request,
         Throwable $exception,
