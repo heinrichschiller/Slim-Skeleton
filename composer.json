@@ -31,7 +31,7 @@
         "phpstan/phpstan": "^2.2",
         "squizlabs/php_codesniffer": "^4.0",
         "selective/test-traits": "^4.3",
-        "dg/bypass-finals": "^1.10"
+        "dg/bypass-finals": "^1.11"
     },
     "autoload": {
         "psr-4": {
